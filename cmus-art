@@ -10,6 +10,11 @@ else
 fi
 
 
+##### Running cava #####
+
+st -e cava
+
+
 ##### Fetching art and looping (updates every 2s) #####
 
 fileCurrent="$(cmus-remote -Q | grep "file" | sed "s/file //")"
