@@ -9,13 +9,10 @@ else
      mkdir /tmp/art/
 fi
 
-##### Running cava #####
+
+##### Fetching art & running cava (updates every 2s) #####
 
 st -e cava &
-
-
-##### Fetching art and looping (updates every 2s) #####
-
 fileCurrent="$(cmus-remote -Q | grep "file" | sed "s/file //")"
 ffmpeg -y -i "$fileCurrent" /tmp/art/art.jpeg &> /dev/null 
 feh -g 250x250+1670+830 -x --scale-down --image-bg black /tmp/art/art.jpeg &
