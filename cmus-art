@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+##### Initialising directory  #####
+
+if [[ -d /tmp/art ]]; then
+     rm -r /tmp/art/
+     mkdir /tmp/art/
+else
+     mkdir /tmp/art/
+fi
+
+
+##### Fetching art and looping (updates every 2s) #####
+
+fileCurrent="$(cmus-remote -Q | grep "file" | sed "s/file //")"
+ffmpeg -y -i "$fileCurrent" /tmp/art/art.jpeg &> /dev/null
+feh -g 250x250+1670+830 -x --scale-down --image-bg black /tmp/art/art.jpeg &> /dev/null
+
+while [[ true ]]; do
+	fileOLD="$(cmus-remote -Q | grep "file" | sed "s/file //")"
+	sleep 2
+	fileNOW="$(cmus-remote -Q | grep "file" | sed "s/file //")"
+
+	if [[ "$fileNOW" != "$fileOLD" ]]; then
+		ffmpeg -y -i "$fileNOW" /tmp/art/art.jpeg &> /dev/null
+	fi
+done
