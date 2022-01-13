@@ -1,6 +1,6 @@
 ![](img/logo.png "cmus-art")
 
-`cmus-art` is a shell script that displays media cover/art when you play songs inside the cmus music player.
+`cmusf` is a shell script that displays media cover/art when you play songs inside the cmus music player and launches the cava music visualiser..
 
 ## Dependencies
 
