@@ -56,14 +56,14 @@ $term -e cava &
 # |_| \___|\__\__|_||_| \__,_|_|  \__|	(updates every 2s)
 #
 
-fileCurrent="$(cmus-remote -Q | grep "file" | sed "s/file //")"
-ffmpeg -y -i "$fileCurrent" /tmp/art/art.jpeg &> /dev/null 
+file="$(cmus-remote -Q | grep "file" | sed "s/file //")"
+ffmpeg -y -i "$file" /tmp/art/art.jpeg &> /dev/null 
 feh -g 250x250+1670+830 -x --scale-down --image-bg black /tmp/art/art.jpeg &
 
 while [[ true ]]; do
 	fileOLD="$(cmus-remote -Q | grep "file" | sed "s/file //")"
 	sleep 2
-	fileNOW="$(cmus-remote -Q | grep "file" | sed "s/file //")"
+	fileNEW="$(cmus-remote -Q | grep "file" | sed "s/file //")"
 
 	if [[ "$fileNOW" != "$fileOLD" ]]; then
 		ffmpeg -y -i "$fileNOW" /tmp/art/art.jpeg &> /dev/null
