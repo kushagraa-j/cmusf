@@ -8,3 +8,7 @@
 - ffmpeg (to fetch art from music file)
 - cava (music visualiser)
 - grep and sed
+
+## Screenshot
+
+![](img/screenshot.png)
