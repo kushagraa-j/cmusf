@@ -16,6 +16,22 @@
 #-------------------------------------------------------------------------------
 
 
+#     _        _           
+#  __| |_ __ _| |_ _  _ ___
+# (_-<  _/ _` |  _| || (_-<
+# /__/\__\__,_|\__|\_,_/__/  (don't do anything if stopped)
+
+Status="$(cmus-remote -Q | grep status | cut -f 2 -d ' ')"
+while [[ $Status == stopped ]];
+do
+	Status="$(cmus-remote -Q | grep status | cut -f 2 -d ' ')"
+	sleep 1
+done
+
+
+
+#-------------------------------------------------------------------------------
+
                                                    
 #  _      _ _        _ _     
 # (_)_ _ (_) |_   __| (_)_ _ 
@@ -29,7 +45,6 @@ if [[ -d /tmp/art ]]; then
 else
      mkdir /tmp/art/
 fi
-
 
 
 #-------------------------------------------------------------------------------
@@ -56,14 +71,14 @@ $term -e cava &
 # |_| \___|\__\__|_||_| \__,_|_|  \__|	(updates every 2s)
 #
 
-file="$(cmus-remote -Q | grep "file" | sed "s/file //")"
-ffmpeg -y -i "$file" /tmp/art/art.jpeg &> /dev/null 
-feh -g 250x250+1670+830 -x --scale-down --image-bg black /tmp/art/art.jpeg &
+fileCurrent="$(cmus-remote -Q | grep "file" | sed "s/file //")"
+ffmpeg -y -i "$fileCurrent" /tmp/art/art.jpeg &> /dev/null 
+feh -Z -x --scale-down --image-bg black /tmp/art/art.jpeg &> /dev/null
 
 while [[ true ]]; do
 	fileOLD="$(cmus-remote -Q | grep "file" | sed "s/file //")"
 	sleep 2
-	fileNEW="$(cmus-remote -Q | grep "file" | sed "s/file //")"
+	fileNOW="$(cmus-remote -Q | grep "file" | sed "s/file //")"
 
 	if [[ "$fileNOW" != "$fileOLD" ]]; then
 		ffmpeg -y -i "$fileNOW" /tmp/art/art.jpeg &> /dev/null
