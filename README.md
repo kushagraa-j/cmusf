@@ -11,24 +11,17 @@
 
 ## Usage
 
-1. Place cmusf script in a directory which is in PATH
-   How to figure what is my path?
-   ```bash
-   echo $PATH
+   1. ```bash
+   cp cmusf /usr/bin
    ```
-   My OUTPUT:
-   ```bash
-   /sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl```
-  
-  Put the script in one of these directories.
-  ```bash
-  cp cmusf /usr/bin/
-  ```
 
-2. Once its inside your path, you can start the script from cmus!
+  > Note: Add /usr/bin/ in PATH if its not added already or copy cmusf into a 
+  other directory which is in path.
+
+2. You can start the script from cmus!
 Just enter `:shell cmusf` inside cmus, and you should be good to go.
 
-![](img/cmd.img)
+![](img/cmd.png "cmd")
 
 ## Screenshot
 
