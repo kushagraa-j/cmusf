@@ -11,10 +11,7 @@
 
 ## Usage
 
-   1. 
-   ```bash
-   cp cmusf /usr/bin
-   ```
+   1. ```bash cp cmusf /usr/bin ```
   > Note: Add /usr/bin/ in PATH if its not added already or copy cmusf into a 
   other directory which is in path.
 
