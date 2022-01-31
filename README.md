@@ -16,7 +16,7 @@
   other directory which is in path.
 
 2. You can start the script from cmus!
-Just enter `:shell cmusf` inside cmus, and you should be good to go.`
+Just enter `:shell cmusf` inside cmus, and you should be good to go.
 
 ![](img/cmd.png "cmd")
 
