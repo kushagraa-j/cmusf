@@ -11,15 +11,15 @@
 
 ## Usage
 
-   1. ```bash
+   1. 
+   ```bash
    cp cmusf /usr/bin
    ```
-
   > Note: Add /usr/bin/ in PATH if its not added already or copy cmusf into a 
   other directory which is in path.
 
 2. You can start the script from cmus!
-Just enter `:shell cmusf` inside cmus, and you should be good to go.
+Just enter `:shell cmusf` inside cmus, and you should be good to go.`
 
 ![](img/cmd.png "cmd")
 
