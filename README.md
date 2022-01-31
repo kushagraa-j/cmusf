@@ -7,7 +7,7 @@
 - feh (to view image)
 - ffmpeg (to fetch art from music file)
 - cava (music visualiser)
-- grep and sed
+- grep and sed (regex)
 
 ## Usage
 
